@@ -34,9 +34,20 @@ Feel free to rename the folder and customize the project structure to best fit y
 
 ### Executive Summary
 
-... Define the problem
-... What is the data science opportunity
-... Key takeaways
+Problem Area
+Fantasy football has become increasingly popular, engaging millions of participants who aim to build the best teams by carefully selecting NFL players. However, making informed decisions on which players to draft, start, or trade can be challenging due to numerous factors influencing a player's performance, such as previous stats, injuries, weather conditions, and team dynamics. This problem primarily affects fantasy football players, ranging from casual fans to serious league participants, who seek to optimize their rosters for success.
+
+Affected Population
+The primary audience impacted by this solution includes fantasy football players who need predictive insights to make strategic roster decisions. Secondary audiences could include sports analysts, fantasy league hosts, and sports betting platforms that benefit from accurate player performance forecasts.
+
+Proposed Data Science Solution
+This project proposes a data science solution utilizing machine learning techniques to predict NFL players' fantasy football statistics. By analyzing historical performance data and other contextual factors, the model will generate predictions to aid users in making better roster decisions. This solution leverages predictive modeling to uncover patterns and insights that are difficult for players to discern on their own.
+
+Impact of the Solution
+The implementation of this solution will enable fantasy football players to make more informed decisions, ultimately increasing their chances of success in fantasy leagues. Additionally, it could reduce the reliance on expert analyses, empowering users with data-driven insights directly. Beyond individual users, this model may also benefit fantasy sports platforms and betting services by enhancing user engagement and satisfaction.
+
+Dataset Description
+The dataset used in this project includes detailed NFL competition and fantasy football data sourced from Kaggle. It contains weekly player statistics, including performance metrics like touchdowns, yards gained, receptions, and points scored. Additionally, contextual variables such as player injuries, weather conditions, and team performance are included to increase the model's predictive accuracy.
 
 ### Demo
 
@@ -91,7 +102,7 @@ Feel free to rename the folder and customize the project structure to best fit y
 
 #### Dataset
 
-... Google Drive links to datasets and pickled models
+https://docs.google.com/spreadsheets/d/1G9FEd53wvaNwfyhXPGsbXaaN3Icwr4Fh/edit?usp=drive_link&ouid=100620050989856606753&rtpof=true&sd=true
 
 ### Credits & References
 

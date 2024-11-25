@@ -1,35 +1,13 @@
-# BrainStation Data Science Capstone Template
+## Future Steps
 
-This is a template repository for setting up your capstone project: it includes a simple folder structure and placeholder files for the most important assets you will be creating.
-
-## Usage
-
-1. Start a new GitHub repo using this template.
-2. Update your `LICENSE` file with date and owner.
-3. Update your `README.md` file to reflect the project - see a sample structure below and please refer to Synapse on what needs to be included here. 
-4. Set up and activate your conda environment:
-    - Create a new `conda` environment for your capstone project.
-    - Activate the environment and export:
-        ```bash
-        conda env export > conda.yml
-        ```
-    - Make sure re-export every time after you update the environment.
-    - You can reset your conda environment by running:
-        ```bash
-        conda env create -f conda.yml
-        conda activate <your-env-name>
-        ```
-5. Add your own notebooks in `./notebooks/` and remove placeholders.
-6. Add your own data in `./data/` and remove placeholder. Note: `.gitignore` will ignore the data folder when you push to github, save a copy of your raw and processed data, pickled models in a Google Drive folder and add the link in the `data_links.md` file.
-7. Add your project documents, figures, reports, presentation pdf's in the `./docs` and remove placeholders.
-8. Add your references (tutorials, papers, books etc.) in `./references`. 
-9. Add your own scripts in `./src/` and remove unnecessary folders.
-
-Feel free to rename the folder and customize the project structure to best fit your work - this template is just the starting point.
+1. Add your own data in `./data/` and remove placeholder. Note: `.gitignore` will ignore the data folder when you push to github, save a copy of your raw and processed data, pickled models in a Google Drive folder and add the link in the `data_links.md` file.
+2. Add your project documents, figures, reports, presentation pdf's in the `./docs` and remove placeholders.
+3. Add your references (tutorials, papers, books etc.) in `./references`. 
+4. Add your own scripts in `./src/` and remove unnecessary folders.
 
 ------------------------------------------------------------------------------
 
-## Project Title
+## Fantasy Forecasts
 =========================
 
 ### Executive Summary
@@ -65,7 +43,49 @@ The dataset used in this project includes detailed NFL competition and fantasy f
 ...     various prototyping directions
 
 
-### Organization
+### Notebooks
+
+**Exploratory Data Analysis**
+
+Objective:
+
+This notebook focuses on cleaning and analyzing player performance data, identifying trends and relationships, and preparing dataframes segmented by player positions for predictive modeling.
+
+1. Data Ingestion:
+Read data from the provided datasource into a working format.
+
+2. Data Cleaning:
+Checked for and addressed null values and duplicate entries.
+Removed players marked as "Did Not Play" to maintain data relevance.
+Fixed inconsistencies for players on bye weeks or listed as free agents.
+
+3. Data Preparation:
+Split the cleaned dataset into separate dataframes for Quarterbacks (QBs), Running Backs (RBs), Wide Receivers (WRs), and Tight Ends (TEs) to facilitate position-specific analysis.
+
+4. Exploratory Analysis:
+Plotted distributions for key stats (e.g., passing yards, rushing yards) to understand positional performance patterns.
+Generated heatmaps to visualize correlations between features (e.g., passing yards, rushing touchdowns) and fantasy point totals.
+Created scatter plots to analyze relationships between individual features and total fantasy points.
+
+5. Data Export:
+Saved the cleaned and segmented dataframes for use in predictive modeling workflows.
+
+**Baseline Modeling**
+
+Objective: 
+This notebook focuses on feature engineering and baseline model implementation to predict fantasy football player performance.
+
+1. Feature Engineering:
+Computed 5-game rolling averages for key stats (e.g., passing yards, rushing yards, receiving yards) to capture recent performance trends.
+Calculated cumulative and average stats for fantasy points, rushing, passing, and receiving metrics up to each week, excluding the current week.
+
+2. Model Development:
+Implemented baseline regression models, including Linear Regression and Ridge Regression, to predict player fantasy performance.
+Used both cumulative season metrics and 5-game rolling averages as predictors to assess their impact on model accuracy.
+
+3. Model Evaluation:
+Evaluated models using Mean Absolute Error (MAE) and R-squared (R²) metrics to measure predictive power. 
+Found that certain positions (e.g., Quarterbacks) achieved better metrics due to the consistent nature of their role and statistical contributions. Leveraged grid search cross-validation to optimize hyperparameters, which significantly improved predictions for all positions.
 
 #### Repository 
 
@@ -102,8 +122,6 @@ The dataset used in this project includes detailed NFL competition and fantasy f
 
 #### Dataset
 
-https://docs.google.com/spreadsheets/d/1G9FEd53wvaNwfyhXPGsbXaaN3Icwr4Fh/edit?usp=drive_link&ouid=100620050989856606753&rtpof=true&sd=true
+https://www.kaggle.com/datasets/fishhead/fantasy-football
 
 ### Credits & References
-
-... Include any personal learning

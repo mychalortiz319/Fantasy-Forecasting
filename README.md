@@ -73,20 +73,8 @@ Found that certain positions (e.g., Quarterbacks) achieved better metrics due to
     - contains link to copy of the dataset (stored in a publicly accessible cloud storage)
     - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
 
-* `model`
-    - `joblib` dump of final model(s)
-
 * `notebooks`
     - contains all final notebooks involved in the project
-
-* `docs`
-    - contains final report, presentations which summarize the project
-
-* `references`
-    - contains papers / tutorials used in the project
-
-* `src`
-    - Contains the project source code (refactored from the notebooks)
 
 * `.gitignore`
     - Part of Git, includes files and folders to be ignored by Git version control

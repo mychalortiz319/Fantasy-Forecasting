@@ -55,33 +55,72 @@ Saved the cleaned and segmented dataframes for use in predictive modeling workfl
 Objective: 
 This notebook focuses on feature engineering and baseline model implementation to predict fantasy football player performance.
 
-1. Feature Engineering:
-Computed 5-game rolling averages for key stats (e.g., passing yards, rushing yards, receiving yards) to capture recent performance trends.
+1. Feature Engineering: Computed 5-game rolling averages for key stats (e.g., passing yards, rushing yards, receiving yards) to capture recent performance trends.
 Calculated cumulative and average stats for fantasy points, rushing, passing, and receiving metrics up to each week, excluding the current week.
 
-2. Model Development:
-Implemented baseline regression models, including Linear Regression and Ridge Regression, to predict player fantasy performance.
+2. Model Development: Implemented baseline regression models, including Linear Regression and Ridge Regression, to predict player fantasy performance.
 Used both cumulative season metrics and 5-game rolling averages as predictors to assess their impact on model accuracy.
 
-3. Model Evaluation:
-Evaluated models using Mean Absolute Error (MAE) and R-squared (R²) metrics to measure predictive power. 
+3. Model Evaluation: Evaluated models using Mean Absolute Error (MAE) and R-squared (R²) metrics to measure predictive power. 
 Found that certain positions (e.g., Quarterbacks) achieved better metrics due to the consistent nature of their role and statistical contributions. Leveraged grid search cross-validation to optimize hyperparameters, which significantly improved predictions for all positions.
+
+**Advanced Modeling**
+
+Objective:
+This notebook builds upon the baseline models by incorporating traditional Gradient Boosting algorithms to improve predictions of fantasy football player performance. It evaluates model performance while addressing potential overfitting issues.
+
+1. Feature Engineering:
+Used the same features developed during baseline modeling, including 5-game rolling averages for key stats and cumulative metrics for fantasy points, rushing, passing, and receiving metrics.
+Did not include further feature engineering beyond the baseline approach to maintain a consistent feature set for comparison.
+
+2. Model Development:
+Implemented traditional Gradient Boosting regression models to leverage their ability to capture complex patterns in the data.
+Compared Gradient Boosting performance to baseline models, using the same predictor variables for consistency.
+Built generalized models rather than position-specific ones to focus on overall predictive improvement.
+
+3. Model Optimization and Tuning:
+Conducted hyperparameter tuning using Grid Search cross-validation to optimize key parameters such as learning rate, maximum depth, and the number of estimators.
+Used early stopping to mitigate overfitting by halting training when validation error stopped improving.
+
+4. Model Evaluation:
+Evaluated models using Mean Absolute Error (MAE) and R-squared (R²) metrics.
+Observed higher metrics for Gradient Boosting models compared to baseline models but noted signs of overfitting during evaluation.
+Residual analysis revealed overfitting patterns, especially for positions with more volatile performance metrics, such as Running Backs and Wide Receivers.
+
+5. Insights and Conclusions:
+While Gradient Boosting models demonstrated higher R² and lower MAE compared to baseline models, the improvements were attributed to overfitting rather than genuine predictive accuracy gains.
+Concluded that further regularization or simplified models may be required to generalize better to unseen data.
+Highlighted the importance of balancing model complexity with interpretability and robustness, emphasizing that advanced models do not always equate to better real-world performance.
+
+
+**Baseline/Advanced Metric Analysis**
+
+Objective:
+This notebook focuses on analyzing and comparing the evaluation metrics from both the baseline and advanced models to understand their performance, limitations, and areas for improvement.
+
+1. Baseline Metrics Analysis:
+
+Reviewed metrics such as Mean Absolute Error (MAE) and R-squared (R²) for the baseline models, including Linear Regression and Ridge Regression.
+Observed that baseline models performed consistently across positions with lower variance, such as Quarterbacks, but struggled with positions exhibiting more volatile performance (e.g., Running Backs and Wide Receivers).
+Highlighted the limitations of using simpler regression models in capturing non-linear patterns and interaction effects.
+Advanced Metrics Analysis:
+
+Compared baseline metrics with those of the advanced Gradient Boosting models, which showed noticeably higher R² and lower MAE.
+Identified overfitting as a potential reason for the improved metrics in advanced models, as residual plots and cross-validation errors revealed discrepancies between training and validation performance.
+Discussed the trade-off between complexity and generalizability, noting that while Gradient Boosting captured more nuanced patterns, it was prone to overfitting due to its sensitivity to noise in the training data.
 
 #### Repository 
 
 * `data` 
     - contains link to copy of the dataset (stored in a publicly accessible cloud storage)
-    - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
 
 * `notebooks`
     - contains all final notebooks involved in the project
+    - also contains the dataframes used for modeling
 
 * `.gitignore`
     - Part of Git, includes files and folders to be ignored by Git version control
-
-* `conda.yml`
-    - Conda environment specification
-
+    
 * `README.md`
     - Project landing page (this page)
 
@@ -91,5 +130,3 @@ Found that certain positions (e.g., Quarterbacks) achieved better metrics due to
 #### Dataset
 
 https://www.kaggle.com/datasets/fishhead/fantasy-football
-
-### Credits & References
